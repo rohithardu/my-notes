@@ -12,6 +12,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
+  viewport: "width=device-width, initial-scale=1",
   title: "Notebook",
   description: "Generate your notes your way!",
 };

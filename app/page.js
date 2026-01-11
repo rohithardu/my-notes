@@ -3,8 +3,8 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import React from "react";
 import { v4 as uuidv4 } from 'uuid';
-  import { ToastContainer, toast } from 'react-toastify';
-  import { Bounce } from "react-toastify";
+import { ToastContainer, toast } from 'react-toastify';
+import { Bounce } from "react-toastify";
 
 export default function Home() {
   const [form, setform] = useState({ title: "", note: "", tags: "" })
@@ -50,15 +50,15 @@ export default function Home() {
   const saveForm = () => {
     if (form.title === "" || form.note === "") {
       toast.warn(`Please add title and note`, {
-                position: "top-right",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: false,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "light",
-            });
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
       return
     }
     handleSave()
@@ -76,15 +76,15 @@ export default function Home() {
     setform({ title: "", note: "", tags: "" })
     setcount(0)
     toast('Added', {
-position: "top-right",
-autoClose: 5000,
-hideProgressBar: false,
-closeOnClick: false,
-pauseOnHover: true,
-draggable: true,
-progress: undefined,
-theme: "light"
-});
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light"
+    });
   }
 
   const deleteNote = (id) => {
@@ -94,15 +94,15 @@ theme: "light"
       setnoteArray(noteArray.filter((item) => item.id !== id))
       setAllNotes(allNotes.filter((item) => item.id !== id))
       toast('Note Deleted.', {
-position: "top-right",
-autoClose: 5000,
-hideProgressBar: false,
-closeOnClick: false,
-pauseOnHover: true,
-draggable: true,
-progress: undefined,
-theme: "light"
-});
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light"
+      });
 
     }
   }
@@ -133,41 +133,43 @@ theme: "light"
 
 
   return (<>
-  <ToastContainer
-position="top-right"
-autoClose={5000}
-hideProgressBar={false}
-newestOnTop={false}
-closeOnClick={false}
-rtl={false}
-pauseOnFocusLoss
-draggable
-pauseOnHover
-theme="light"
-transition={Bounce}
-/>
+    <ToastContainer
+      position="top-right"
+      autoClose={5000}
+      hideProgressBar={false}
+      newestOnTop={false}
+      closeOnClick={false}
+      rtl={false}
+      pauseOnFocusLoss
+      draggable
+      pauseOnHover
+      theme="light"
+      transition={Bounce}
+    />
     <div className="bg-slate-100 min-h-screen">
-      <div className="py-8 flex flex-col items-center gap-3 relative">
-        <h1 className="text-4xl font-bold">N<span className="text-red-500">o</span>teb<span className="text-blue-500">o</span><span className="text-green-500">o</span>k</h1>
+      <div className="py-8 flex flex-col md:items-center gap-3 relative px-4">
+        <h1 className="md:text-4xl text-2xl font-bold">N<span className="text-red-500">o</span>teb<span className="text-blue-500">o</span><span className="text-green-500">o</span>k</h1>
         <div className="flex flex-col gap-3 w-full items-center">
-          <input autoFocus type="text" value={form.title} className="w-[30%] uppercase rounded-full px-3 py-1 bg-white outline outline-blue-200" placeholder="Add Title" name="title" id="title" onChange={handleChange} />
-          <div className="w-[40%] relative">
+          <input autoFocus type="text" value={form.title} className="md:w-[30%] w-1/2 uppercase rounded-full px-3 py-1 bg-white outline outline-blue-200" placeholder="Add Title" name="title" id="title" onChange={handleChange} />
+          <div className="lg:w-[40%] w-[80%] relative">
             <div className="absolute right-1 opacity-50">{count}/300</div>
             <textarea maxLength={300} name="note" value={form.note} id="note" className="bg-white w-full p-2 rounded-md leading-5 outline outline-blue-200" placeholder="Enter your note" onChange={handleChange2}></textarea>
           </div>
-          <input type="text" className="w-[10%] rounded-full px-3 py-1 bg-white outline outline-blue-200" placeholder="Add tags" onChange={handleChange} value={form.tags} name="tags" id="tags" />
+          <input type="text" className="md:w-[15%] w-1/2 sm:w-1/4 rounded-full px-3 py-1 bg-white outline outline-blue-200" placeholder="Add tags" onChange={handleChange} value={form.tags} name="tags" id="tags" />
         </div>
-        <div className="absolute right-10 top-20">
-          <img className="absolute left-2 top-2" src="search.svg" alt="search" width={15} height={15} />
-          <input type="text" className="bg-white rounded-full px-8 py-1 outline outline-blue-200" placeholder="Search" onChange={handleChange3} name="search" value={search} />
+        <div className="search absolute right-10 lg:top-20 md:top-10 top-8">
+          <img className="absolute left-2 top-2" src="search.svg" alt="search" width={13} height={13} />
+          <input type="text" className="search bg-white rounded-full md:w-full w-[129px] md:px-8 px-6 text-sm md:text-md py-1 outline outline-blue-200" placeholder="Search" onChange={handleChange3} name="search" value={search} />
         </div>
-        <button onClick={saveForm} className="px-4 py-2 bg-cyan-300 rounded-full font-bold cursor-pointer">Add Note</button>
+        <div className="w-full flex justify-center">
+        <button onClick={saveForm} className="w-fit text-sm md:text-md px-4 py-2 bg-cyan-300 rounded-full font-bold cursor-pointer">Add Note</button>
+        </div>
       </div>
       <div className="showNotes notes-masonry max-w-[80vw] mx-auto flex-wrap">
         {noteArray.map((item, index) => {
           const color = item.color || "green";
           const bgClass = colorClassMap[color] || colorClassMap["green"];
-          return <div key={index} className={`note-card max-w-[20vw] h-fit p-3 pb-7 rounded-lg ${bgClass} flex flex-col p-2 relative`}>
+          return <div key={index} className={`note-card lg:max-w-[20vw] max-w-[40vw] h-fit p-3 pb-7 rounded-lg ${bgClass} flex flex-col p-2 relative`}>
             <div className="font-semibold text-xl break-all">{item.title}</div>
             <div className="whitespace-pre-wrap break-words text-md overflow-hidden">{item.note}</div>
             {item.tags && (<div className={`text-xs bg-gray-200 rounded-full py-1 px-2 w-fit`}>{item.tags}</div>)}
@@ -177,7 +179,7 @@ transition={Bounce}
             </div>
           </div>
         })}
-        {noteArray.length === 0 && <div>{search ? "No matches found" : "No notes to show"}</div>}
+        {noteArray.length === 0 && <div className="w-full">{search ? "No matches found" : "No notes to show"}</div>}
       </div>
     </div>
   </>
