@@ -1,4 +1,6 @@
-![My Notes App](Screenshot.png)
+<img width="1920" height="1128" alt="image" src="https://github.com/user-attachments/assets/034b9689-6f2e-43e1-9856-1203bd6a6219" />![My Notes App](Screenshot.png)
+Live Demo:
+https://my-notes-six-zeta.vercel.app/
 # My Notes App
 A fast and simple notes app built with Next.js that stores notes in the browser using localStorage.
 
