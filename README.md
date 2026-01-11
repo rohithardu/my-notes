@@ -1,3 +1,4 @@
+![My Notes App](screenshot.png)
 # My Notes App
 A fast and simple notes app built with Next.js that stores notes in the browser using localStorage.
 
