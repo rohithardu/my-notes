@@ -24,3 +24,13 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.notes-masonry{
+  column-count: 5;
+  column-gap: 1rem;
+}
+
+.note-card{
+  break-inside: avoid;
+  margin-bottom: 1rem;
+}
