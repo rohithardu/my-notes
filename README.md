@@ -1,24 +1,32 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# My Notes App
+A fast and simple notes app built with Next.js that stores notes in the browser using localStorage.
 
-## Getting Started
+## Features
+- Add, edit and delete notes
+- Search notes by text
+- Colour coded notes
+- Uppercase note titles
+- Data saved in browser (no login required)
 
-First, run the development server:
+## Tech Stack
+- Next.js
+- React
+- CSS
 
+## How to run locally
+1. Clone the repo
+2. Install dependencies
+3. ```bash
+   npm install
+   ```
+
+## Run locally
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
+## Open in browser
+http://localhost:3000
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
 ## Learn More
 
